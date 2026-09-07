@@ -205,6 +205,12 @@
     .photo-pair{gap:6px;padding:0 6px}
     .photo-pair img{max-height:28vh;} /* reduz para caber em celulares */
   }
+  /* Inline photo per venue column (smaller) */
+  .inline-photo{width:100%;margin-top:12px;margin-bottom:6px;display:flex;justify-content:center}
+  .inline-photo img{width:100%;max-width:480px;height:auto;max-height:36vh;object-fit:cover;border-radius:6px;display:block}
+  @media (max-width:640px){
+    .inline-photo img{max-height:22vh}
+  }
   .full-photo img{
     max-width:100%;
     width:100%;
@@ -552,11 +558,11 @@
   <div class="divider"></div>
 
   <section class="full-photo">
-      <img src="foto_noivos_1.jpg"/>
-    </section>
+      <img src="foto_noivos_1.jpg" alt="Foto - noivos 1"/>
+  </section>
 
   <div class="divider"></div>
-
+  
   <section id="venue">
     <h2 class="serif">onde será</h2>
     <div class="venue-cols">
@@ -570,6 +576,7 @@
             <div class="place">Paróquia Bom Jesus do Cabral</div>
             <div class="addr">Rua Bom Jesus do Cabral, 159 – Cabral<br>Curitiba – PR</div>
           </div>
+            <div class="inline-photo"><img src="foto_noivos_2.jpg" alt="Foto - após a cerimônia"/></div>
         </div>
       </div>
       <div class="venue-col">
@@ -582,6 +589,7 @@
             <div class="place">Villa Augusta</div>
             <div class="addr">Rua Nicarágua, 176 – Cabral<br>Curitiba – PR</div>
           </div>
+          <div class="inline-photo"><img src="foto_noivos_3.jpg" alt="Foto - após a recepção"/></div>
         </div>
       </div>
     </div>
@@ -589,13 +597,8 @@
 
   <div class="divider"></div>
 
-  <section class="photo-pair">
-    <div class="photo-half"><img src="foto_noivos_2.jpg" alt="Noivos 2"/></div>
-    <div class="photo-half"><img src="foto_noivos_3.jpg" alt="Noivos 3"/></div>
-  </section>
-
   <div class="divider"></div>
-  
+
   <section id="countdown">
     <h2 class="serif">contagem regressiva</h2>
     <div class="count-grid">
