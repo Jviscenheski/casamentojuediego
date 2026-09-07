@@ -175,6 +175,52 @@
     z-index:60;
   }
 
+  /* Full-bleed photo section that spans entire viewport width */
+  .full-photo{
+    width:100vw;
+    margin-left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:var(--paper);
+    padding:0;
+  }
+  /* Side-by-side photo pair for the couple */
+  .photo-pair{
+    width:100vw;
+    margin-left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    align-items:stretch;
+    justify-content:center;
+    background:var(--paper);
+    padding:0 8px;
+  }
+  .photo-pair .photo-half{flex:1;overflow:hidden;border-radius:6px;}
+  .photo-pair img{width:100%;height:100%;object-fit:cover;display:block;max-height:50vh;}
+  @media (max-width:640px){
+    .photo-pair{gap:6px;padding:0 6px}
+    .photo-pair img{max-height:28vh;} /* reduz para caber em celulares */
+  }
+  .full-photo img{
+    max-width:100%;
+    width:100%;
+    height:auto;
+    max-height:85vh; /* não ultrapassar a altura da janela (um pouco menos que 100%) */
+    object-fit:contain; /* garante a imagem inteira visível */
+    display:block;
+  }
+  @media (max-width:640px){
+    .full-photo img{
+      max-height:70vh; /* mobile: um pouco menor que a tela */
+      width:auto;
+      max-width:100%;
+    }
+  }
+
   main{
     max-width:520px;
     margin:0 auto;
@@ -373,6 +419,12 @@
     .collage-stack{transform:scale(.92);transform-origin:top center;margin-bottom:-35px;}
   }
 
+  /* Mobile font-size adjustments for better fit */
+  @media (max-width:480px){
+    .parents{font-size:11px;} /* reduz nomes dos pais para caber no celular */
+    #hero h1{font-size:42px;} /* reduz tamanho do nome dos noivos em telas pequenas */
+  }
+
   #countdown{background:var(--ink);color:var(--paper);}
   #countdown h2{color:var(--paper);font-size:24px;margin-bottom:38px;}
   .count-grid{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;}
@@ -499,6 +551,12 @@
 
   <div class="divider"></div>
 
+  <section class="full-photo">
+      <img src="foto_noivos_1.jpg"/>
+    </section>
+
+  <div class="divider"></div>
+
   <section id="venue">
     <h2 class="serif">onde será</h2>
     <div class="venue-cols">
@@ -529,24 +587,15 @@
     </div>
   </section>
 
-  <section id="collage">
-    <h2 class="serif">nossa história</h2>
-    <p class="sub">alguns momentos que nos trouxeram até aqui</p>
+  <div class="divider"></div>
 
-    <div class="collage-stack">
-      <div class="photo-slot p1">foto 1</div>
-      <div class="photo-slot p2">foto 2</div>
-      <div class="photo-slot p3">foto 3</div>
-      <div class="photo-slot p4">foto 4</div>
-
-      <div class="monogram-card">
-        <img src="logo.png" alt="JD" style="width:100px;height:auto;display:block;"/>
-      </div>     
-
-      <div class="collage-caption">JULIANA &amp; DIEGO · 03.04.2027</div>
-    </div>
+  <section class="photo-pair">
+    <div class="photo-half"><img src="foto_noivos_2.jpg" alt="Noivos 2"/></div>
+    <div class="photo-half"><img src="foto_noivos_3.jpg" alt="Noivos 3"/></div>
   </section>
 
+  <div class="divider"></div>
+  
   <section id="countdown">
     <h2 class="serif">contagem regressiva</h2>
     <div class="count-grid">
