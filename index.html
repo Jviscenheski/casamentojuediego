@@ -205,12 +205,7 @@
     .photo-pair{gap:6px;padding:0 6px}
     .photo-pair img{max-height:28vh;} /* reduz para caber em celulares */
   }
-  /* Inline photo per venue column (smaller) */
-  .inline-photo{width:100%;margin-top:12px;margin-bottom:6px;display:flex;justify-content:center}
-  .inline-photo img{width:100%;max-width:480px;height:auto;max-height:36vh;object-fit:cover;border-radius:6px;display:block}
-  @media (max-width:640px){
-    .inline-photo img{max-height:22vh}
-  }
+
   /* Map link styling */
   .map-link{margin-top:8px}
   .map-link a{font-size:12px;color:#6f6858;text-decoration:underline;display:inline-block}
@@ -444,13 +439,66 @@
     #hero h1{font-size:42px;} /* reduz tamanho do nome dos noivos em telas pequenas */
   }
 
-  /* Countdown: lighter, smaller and more compact */
-  #countdown{background:var(--paper);color:var(--ink);padding:40px 32px;border-radius:6px;}
-  #countdown h2{color:var(--ink);font-size:20px;margin-bottom:18px;font-weight:500;}
-  .count-grid{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;align-items:center;}
+  /* Countdown over the couple photo */
+  #countdown{
+    position:relative;
+    min-height:680px;
+    margin:0;
+    padding:70px 32px 42px;
+    border-radius:0;
+    overflow:hidden;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    background:
+      linear-gradient(rgba(35,31,25,.12),rgba(35,31,25,.18)),
+      url('foto_noivos_4.jpg') center center / cover no-repeat;
+  }
+  #countdown h2{
+    position:relative;
+    z-index:1;
+    color:#fff;
+    font-size:20px;
+    margin:0 0 18px;
+    font-weight:500;
+    text-shadow:0 1px 8px rgba(0,0,0,.28);
+  }
+  .count-grid{
+    position:relative;
+    z-index:1;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top:0;
+  }
   .count-box{min-width:56px;}
-  .count-box .num{font-family:'Cormorant Garamond',serif;font-size:36px;line-height:1;margin-bottom:6px;}
-  .count-box .lbl{font-size:10px;letter-spacing:2px;color:var(--ink-soft);margin-top:0;}
+  .count-box .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:36px;
+    line-height:1;
+    margin-bottom:6px;
+    text-shadow:0 1px 8px rgba(0,0,0,.3);
+  }
+  .count-box .lbl{
+    font-size:10px;
+    letter-spacing:2px;
+    color:#fff;
+    margin-top:0;
+    text-shadow:0 1px 6px rgba(0,0,0,.3);
+  }
+
+  @media (max-width:640px){
+    #countdown{
+      min-height:560px;
+      padding-top:52px;
+      padding-left:20px;
+      padding-right:20px;
+    }
+  }
 
   #venue h2{font-size:26px;margin-bottom:36px;}
   
@@ -591,7 +639,6 @@
             <div class="addr">Rua Bom Jesus do Cabral, 159 – Cabral<br>Curitiba – PR</div>
             <div class="map-link"><a href="https://www.google.com/maps/search/?api=1&query=Rua+Bom+Jesus+do+Cabral+159+Curitiba+PR" target="_blank" rel="noopener">Ver no Google Maps</a></div>
           </div>
-            <div class="inline-photo"><img src="foto_noivos_2.jpg" alt="Foto - após a cerimônia"/></div>
         </div>
       </div>
       <div class="venue-col">
@@ -605,7 +652,6 @@
             <div class="addr">Rua Nicarágua, 176 – Cabral<br>Curitiba – PR</div>
             <div class="map-link"><a href="https://www.google.com/maps/search/?api=1&query=Villa+Augusta+Eventos+Curitiba+PR" target="_blank" rel="noopener">Ver no Google Maps</a></div>
           </div>
-          <div class="inline-photo"><img src="foto_noivos_3.jpg" alt="Foto - após a recepção"/></div>
         </div>
       </div>
     </div>
@@ -629,7 +675,7 @@
 
   <section id="closing">
     <h2 class="serif">todos os detalhes</h2>
-    <p>Lista de presentes, confirmação de presença e mais informações estão no nosso site</p>
+    <p>Lista de presentes, confirmação de presença e mais informações estão no nosso site do casamento.</p>
     <a href="#" class="site-btn">ACESSAR O SITE</a>
   </section>
 
